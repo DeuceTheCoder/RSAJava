@@ -17,6 +17,7 @@ public class RSAMachine {
 
     private byte[] useCipher(byte[] message, Key key, int mode) {
         Cipher cipher = null;
+        byte[] outputText = null;
         try {
             cipher = Cipher.getInstance("RSA");
         } catch (NoSuchAlgorithmException e) {
@@ -35,7 +36,6 @@ public class RSAMachine {
             return null;
         }
 
-        byte[] outputText = null;
         try {
             outputText = cipher.doFinal(message);
         } catch (IllegalBlockSizeException e) {
@@ -47,18 +47,5 @@ public class RSAMachine {
         }
 
         return outputText;
-    }
-
-    public static byte[] stringToByteArray(String input) {
-        byte[] bytes = new byte[input.length()];
-
-        for(int i=0; i<input.length(); i++) {
-            bytes[i] = (byte) input.charAt(i);
-        }
-        return bytes;
-    }
-
-    public static String byteArrayToString(byte[] input) {
-        return new String(input);
     }
 }

@@ -1,15 +1,12 @@
 package com.deuceCodes.RSAEncrypt;
 
-import com.deuceCodes.RSAEncrypt.RSAMachine;
-import org.junit.Before;
-import org.junit.Test;
-
 import java.security.KeyPair;
 
+import org.junit.Before;
+import org.junit.Test;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.hamcrest.CoreMatchers.not;
 
 public class RSAMachineTest {
 
